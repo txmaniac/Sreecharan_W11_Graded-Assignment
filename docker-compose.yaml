@@ -1,0 +1,7 @@
+version: '3'
+services:
+  flask-app:
+    container_name: breast_cancer_microservice
+    build: .
+    ports:
+      - "5000:5000"
