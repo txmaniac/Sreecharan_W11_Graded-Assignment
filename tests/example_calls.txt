@@ -8,3 +8,38 @@ curl -X GET http://localhost:5000/info
 
 # GET method health
 curl -X GET http://localhost:5000/health
+
+curl -d '[{
+        "radius_mean": 14.44,
+        "texture_mean": 15.18,
+        "perimeter_mean": 93.97,
+        "area_mean": 640.1,
+        "smoothness_mean": 0.0997,
+        "compactness_mean": 0.1021,
+        "concavity_mean": 0.08487,
+        "concave points_mean": 0.05532,
+        "symmetry_mean": 0.1724,
+        "fractal_dimension_mean": 0.06081,
+        "radius_se": 0.2406,
+        "texture_se": 0.7394,
+        "perimeter_se": 2.12,
+        "area_se": 21.2,
+        "smoothness_se": 0.005706,
+        "compactness_se": 0.02297,
+        "concavity_se": 0.03114,
+        "concave points_se": 0.01493,
+        "symmetry_se": 0.01454,
+        "fractal_dimension_se": 0.002528,
+        "radius_worst": 15.85,
+        "texture_worst": 19.85,
+        "perimeter_worst": 108.6,
+        "area_worst": 766.9,
+        "smoothness_worst": 0.1316,
+        "compactness_worst": 0.2735,
+        "concavity_worst": 0.3103,
+        "concave points_worst": 0.1599,
+        "symmetry_worst": 0.2691,
+        "fractal_dimension_worst": 0.07683
+    }]' \
+     -H "Content-Type: application/json" \
+     -X POST http://0.0.0.0:5000/predict
